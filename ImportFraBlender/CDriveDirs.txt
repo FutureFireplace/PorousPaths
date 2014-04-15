@@ -1,0 +1,25 @@
+$AVG
+$Recycle.Bin
+Autodesk
+CanoScan
+D2mp_Out
+Documents and Settings
+Intel
+MSOCache
+NVIDIA
+PDS_1_8_TB_HDD
+PerfLogs
+Program Files
+Program Files (x86)
+ProgramData
+Programmer
+Python33
+Rbackup
+Recovery
+System Volume Information
+Temp
+tmp
+Users
+VS2012
+VS2013
+Windows
