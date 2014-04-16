@@ -19,10 +19,12 @@ public class Moving : MonoBehaviour {
 	//The waypoint we are currently moving towards
 	private int currentWaypoint = 0;
 	private Seeker seeker;
+	private ThirdPersonCharacter controller;
 	
 	public void Start () {
 		//Get a reference to the Seeker component we added earlier
 		seeker = GetComponent<Seeker>();
+		controller = GetComponent<ThirdPersonCharacter> ();
 		
 		
 		//Start a new path to the targetPosition, return the result to the OnPathComplete function
@@ -55,7 +57,7 @@ public class Moving : MonoBehaviour {
 	
 	public void FixedUpdate () {
 		if (path == null) {
-			rigidbody.velocity = Vector3.zero;
+			controller.Move (Vector3.zero, false, false, Vector3.zero);
 			return;
 		}
 		
@@ -68,7 +70,8 @@ public class Moving : MonoBehaviour {
 		//Direction to the next waypoint
 		Vector3 dir = (path.vectorPath[currentWaypoint]-transform.position).normalized;
 		dir *= speed * Time.fixedDeltaTime;
-		rigidbody.AddForce (dir);
+		controller.Move (dir, false, false, dir);
+
 		
 		//Check if we are close enough to the next waypoint
 		//If we are, proceed to follow the next waypoint
