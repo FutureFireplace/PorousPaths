@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
 	public GameObject target;
+
 	public float attackTimer;
 	public float attackCoolDown;
 
@@ -13,13 +14,26 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	public void setTarget(GameObject newTarget){
+
+		if (target != null) {
+			EnemyHealth eh = (EnemyHealth)target.GetComponent ("EnemyHealth");
+			eh.showGui = false;
+		}
+
+		EnemyHealth ehNew = (EnemyHealth)newTarget.GetComponent ("EnemyHealth");
+		ehNew.showGui = true;
+
+		target = newTarget;
+	}
+
 	void Update () {
 		if(attackTimer > 0)
 			attackTimer -= Time.deltaTime;
 
 		if(attackTimer < 0)
-			attackTimer = 0;
-
+			attackTimer = 0; 
+		
 		if(Input.GetKeyUp(KeyCode.Q)) { //takes Q as a key input. Initiate attack when the button is released
 			if(attackTimer == 0) { // allows player to attack if attacktimer is 0
 				Attack();

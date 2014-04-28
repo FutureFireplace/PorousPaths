@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 	public int maxHealth = 100; // defines max health
 	public int curHealth = 100; // defines current health
-
+	public int healthPotionC = 4;
+	public int healthPotion = 20;
 	public float healthBarLenght;
 
 	// Use this for initialization
@@ -18,9 +19,12 @@ public class PlayerHealth : MonoBehaviour {
 		AdjustCurrentHealth(0);
 	}
 
+
+
 	// Creates a GUI box to display the health of the player
 	void OnGUI() {
 		GUI.Box (new Rect(10, 10, healthBarLenght, 20), curHealth + "/" + maxHealth);
+		GUI.Box (new Rect(20, 550, 120, 25), healthPotionC + "/" + "4 Healthpotions" ); 
 	}
 
 	public void AdjustCurrentHealth(int adj) {
@@ -38,6 +42,11 @@ public class PlayerHealth : MonoBehaviour {
 		if(maxHealth < 1)
 			maxHealth = 1;
 
+		if (healthPotionC > 0 && Input.GetKeyUp ("1")) {
+			curHealth += healthPotion;
+			healthPotionC -= 1;
+
+				}
 		healthBarLenght = (Screen.width / 2) * (curHealth / (float)maxHealth);
 	}
 }

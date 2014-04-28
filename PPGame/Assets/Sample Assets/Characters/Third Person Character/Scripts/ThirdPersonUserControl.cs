@@ -34,6 +34,7 @@ public class ThirdPersonUserControl : MonoBehaviour {
 		// read inputs
 		bool crouch = Input.GetKey(KeyCode.C);
 
+
 		#if CROSS_PLATFORM_INPUT
 		bool jump = CrossPlatformInput.GetButton("Jump");
 		float h = CrossPlatformInput.GetAxis("Horizontal");

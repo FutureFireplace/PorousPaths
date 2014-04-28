@@ -27,7 +27,7 @@ public class AICharacterControl : MonoBehaviour {
 		{
 
 	        // update the progress if the character has made it to the previous target
-			if ((target.position-targetPos).magnitude > targetChangeTolerance) {
+			if (Input.GetKey (KeyCode.W)) {
 				targetPos = target.position;
 				agent.SetDestination(targetPos);
 			}

@@ -38,7 +38,13 @@ public class EnemyAttack : MonoBehaviour {
 		Debug.Log(distance); // to measure distance in console for defining distances
 		if(distance < 10) { // max distance the player can be from enemy to hit
 			if(direction > 0) { // makes sure player is facing enemy to hit
+
+
+				Animation[] anims = GetComponentsInChildren<Animation>();
 				
+				foreach (Animation anim in anims) {
+					anim.CrossFade("Att3");
+				}
 				PlayerHealth eh = (PlayerHealth)target.GetComponent("PlayerHealth");
 				eh.AdjustCurrentHealth(-5); // enemy loses 10 health for each attack it is hit by
 				
