@@ -7,8 +7,8 @@ public class SplashGUI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space)){ // will load scene1 when space is pressed
-				Application.LoadLevel("Scene1");
+		if(Input.GetKeyDown(KeyCode.Space)){ // will load faerdig2dageinden when space is pressed
+			Application.LoadLevel("faerdig2dageinden");
 			}
 	}
 		void OnGUI(){ // creates gui on screen

@@ -45,8 +45,11 @@ public class PlayerHealth : MonoBehaviour {
 		if (healthPotionC > 0 && Input.GetKeyUp ("1")) {
 			curHealth += healthPotion;
 			healthPotionC -= 1;
+			}
 
-				}
+		if(curHealth == 0)
+			Application.LoadLevel("EndScreen");
+
 		healthBarLenght = (Screen.width / 2) * (curHealth / (float)maxHealth);
 	}
 }
