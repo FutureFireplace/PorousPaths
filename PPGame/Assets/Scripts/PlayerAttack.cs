@@ -6,6 +6,12 @@ public class PlayerAttack : MonoBehaviour {
 
 	public float attackTimer;
 	public float attackCoolDown;
+	public GameObject body;
+	public GameObject clothes;
+	public GameObject rope;
+	public GameObject shoes;
+	public GameObject weapon;
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +44,11 @@ public class PlayerAttack : MonoBehaviour {
 			if(attackTimer == 0) { // allows player to attack if attacktimer is 0
 				Attack();
 				attackTimer = attackCoolDown; //everytime player attacks timer is set to cooldown
+				body.animation.CrossFade("Kropspydstik");
+				clothes.animation.CrossFade("Klaederspydstik");
+				shoes.animation.CrossFade("Skospydstik");
+				rope.animation.CrossFade("Rebspydstik");
+				weapon.animation.CrossFade("Spydstick");
 			}
 		}
 	}

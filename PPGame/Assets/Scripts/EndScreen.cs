@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EndScreenGUI : MonoBehaviour {
+public class EndScreen : MonoBehaviour {
 
 	public GUISkin customSkin = null; // allows for a guiskin to be attached
 

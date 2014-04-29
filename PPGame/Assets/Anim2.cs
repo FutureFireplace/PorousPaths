@@ -19,11 +19,12 @@ public class Anim2 : MonoBehaviour {
 
 	void animate() {
 		if(Input.GetAxis("Vertical") > 0) {
-			body.animation.CrossFade("HetWalk0");
-			clothes.animation.CrossFade("HetWalkKlaeder");
-			shoes.animation.CrossFade("HetWalkSko");
-			rope.animation.CrossFade("HetWalkReb");
-			weapon.animation.CrossFade("SpydRyg");
+			body.animation.CrossFade("Kropwalk");
+			clothes.animation.CrossFade("Klaederwalk");
+			shoes.animation.CrossFade("Skowalk");
+			rope.animation.CrossFade("Rebwalk");
+			weapon.animation.CrossFade("Spydtilryg");
+			weapon.animation.CrossFade("Spydwalk");
 		}
 	}
 	

@@ -6,6 +6,11 @@ public class Targeting : MonoBehaviour {
 	
 	public List<Transform> targets;
 	public Transform selectedTarget;
+	public GameObject body;
+	public GameObject clothes;
+	public GameObject rope;
+	public GameObject shoes;
+	public GameObject weapon;
 	
 	private Transform myTransform;
 	
@@ -88,7 +93,13 @@ public class Targeting : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Tab))
 		{
+
 			TargetEnemy();
+			body.animation.CrossFade("Kropspydfraryg");
+			clothes.animation.CrossFade("Klaederspydfraryg");
+			shoes.animation.CrossFade("Skospydfraryg");
+			rope.animation.CrossFade("Rebspydfraryg");
+			weapon.animation.CrossFade("Spydspydfraryg");
 		}
 	}
 }
