@@ -2592,6 +2592,7 @@ MonoBehaviour:
   Target9: {fileID: 346107344}
   speed: 5
   rotationSpeed: 2
+  distToWaypoint: 10
 --- !u!54 &101236438
 Rigidbody:
   m_ObjectHideFlags: 0
